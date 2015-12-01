@@ -1,0 +1,433 @@
+/* style.scss */
+
+
+$white: #ffffff;
+$gray1: #f5f5f5;
+$gray2: #e2e2e2;
+$gray3: #c7c7c7;
+$gray4: #a7a7a7;
+$gray5: #868686;
+$gray6: #666666;
+$gray7: #4a4a4a;
+$gray8: #323232;
+$gray9: #202020;
+$black: #000000;
+
+$blue: #0b61a3;
+$blue-dark: #0c7197;
+
+$bp-mobile:680px;
+$bp-narrow:768px;
+$bp-regular:1024px;
+$bp-wide:1280px;
+$bp-xwide:1440px;
+
+$p-teal: #1ABC9C;
+$p-teal-dark: #16A085;
+$p-green: #2ECC71;
+$p-green-dark: #27AE60;
+$p-blue: #3498DB;
+$p-blue-dark: #2980B9;
+$p-purple: #9B59B6;
+$p-purple-dark:#8E44AD;
+$p-gray: #34495E;
+$p-gray-light: #64798E;
+$p-gray-dark:#2C3E50;
+$p-yellow: #F1C40F;
+$p-yellow-dark:#F39C12;
+$p-orange: #E67E22;
+$p-orange-dark :#D35400;
+$p-red: #E74C3C;
+$p-red-dark: #C0392B;
+$p-pink: #ec95d8;
+$p-brown: #AC6D4A;	
+
+.pastel1 {
+    background: $p-teal !important;
+    fill: $p-teal !important;}
+.pastel2{
+    background: $p-green !important;
+    fill: $p-green !important;}
+.pastel3{
+    background: $p-orange !important;
+    fill: $p-orange !important;}
+.pastel4{
+    background: $p-blue !important;
+    fill: $p-blue !important;}
+.pastel5{
+    background: $p-purple !important;
+    fill: $p-purple !important;}
+.pastel6{
+    background: $p-pink !important;
+    fill: $p-pink !important;}
+.pastel7{
+    background: $p-yellow !important;
+    fill: $p-yellow !important;}
+.pastel8{
+    background: $p-teal-dark !important;
+    fill: $p-teal-dark !important;}
+.pastel9{
+    background: $p-red !important;
+    fill: $p-red !important;}
+.pastel10{
+    background: $p-yellow-dark !important;
+    fill: $p-yellow-dark !important;}
+
+.pastel11{
+    background: $p-brown !important;
+    fill: $p-brown !important;}
+.pastel12{
+    background: $p-orange-dark !important;
+    fill: $p-orange-dark !important;}
+.pastel13{
+    background: $p-teal-dark !important;
+    fill: $p-teal-dark !important;}
+.pastel14{
+    background: $p-red-dark !important;
+    fill: $p-red-dark !important;}
+
+
+
+.text-pastel1{
+    color: $p-teal;}
+.text-pastel2{
+    color: $p-green;}
+.text-pastel3{
+    color: $p-orange;}
+.text-pastel4{
+    color: $p-blue;}
+.text-pastel5{
+    color: $p-purple;}
+.text-pastel6{
+    color: $p-pink;}
+.text-pastel7{
+    color: $p-yellow;}
+.text-pastel8{
+    color: $p-teal-dark;}
+.text-pastel9{
+    color: $p-red;}
+.text-pastel10{
+    color: $p-yellow-dark;}
+
+
+* {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+
+@mixin css-animate($name, $time, $iteration, $delay, $ease) {
+	animation: $name linear $time $iteration;
+	-moz-animation: $name linear $time  $iteration;
+	-webkit-animation: $name linear $time  $iteration;
+	animation-delay: $delay;
+	-moz-animation-delay: $delay; /* Firefox */
+	-webkit-animation-delay: $delay; /* Safari and Chrome */
+	-o-animation-delay: $delay; /* Opera */
+	animation-timing-function:$ease;
+	-moz-animation-timing-function:$ease; /* Firefox */
+	-webkit-animation-timing-function:$ease; /* Safari and Chrome */
+	-o-animation-timing-function:$ease; /* Opera */
+}
+
+@mixin translate3d($x, $y, $z) {
+	-webkit-transform: translate3d($x, $y, $z); 
+	-moz-transform: translate3d($x, $y, $z); 
+	-ms-transform: translate3d($x, $y, $z); 
+	transform: translate3d($x, $y, $z); 
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+html, body {
+	width:100%;
+	height:100%;
+	font-size:12px;
+	font-family: 'Roboto', sans-serif;
+	line-height:1.2;
+	min-width:320px;
+	-webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+    text-size-adjust: none;
+	background: $blue;
+	color: $white;
+	font-size: 16px;
+	margin: 0;
+
+    @include linear-gradient($blue, $blue, #108adf);
+}
+
+
+.header {
+	text-align:center;
+	padding: 32px 16px;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+	
+	h1 {
+		font-size:48px;
+		margin: 16px 0 16px;
+        line-height: 1;
+		transition: font-size .25s;
+	}
+
+	@media all and (min-width: $bp-narrow) {
+		h1 {
+			font-size:64px;
+		}
+	}
+	@media all and (min-width: $bp-regular) {
+		h1 {
+			font-size:80px;
+		}
+	}
+}
+
+
+@include keyframes(showUser) {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.user {
+	display:none;
+	
+	img {
+		display: inline-block;
+		height: 80px;
+		width: 80px;
+		border: 3px solid $white;
+		border-radius:50%;
+		
+		
+	}
+	
+	.show-user & {
+		display: block;
+		
+		img {
+			transform: scale(1);
+			@include css-animate(showUser, .45s, 1, 0, ease-out);
+		}
+	}
+}
+
+.date {
+	font-size: 32px;
+	font-weight:bold;
+	.date-curr {
+		display: inline-block;
+		margin: 0 8px
+	}
+	.date-prev, .date-next {	
+		display: inline-block;
+		vertical-align: -8px;
+		border-radius: 50%;
+		cursor:pointer;
+		
+		
+		&:hover {
+			transition: all .25s ease-out;
+			background: $white;
+			.icon {
+				fill: $blue-dark;
+			}
+		}		
+	}
+}
+
+
+.icon {
+	width: 40px;
+	height: 40px;
+	fill: $white;
+	display: block;
+}
+
+
+.foursquare-connect {
+    margin: 16px 0 36px 0;
+    text-align:center;
+    img {
+        height: 100%;
+        vertical-align: -16px;
+    }
+    
+    a {
+        color: $blue;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 4px;
+        overflow:hidden;
+        text-decoration: none;
+        display: inline-block;
+        background: $white;
+        box-shadow: -3px 3px 0 rgba($black, .3);
+        transition: scale .25s;
+        cursor:pointer;
+        
+        &:active {
+            background: $gray2;
+            color: $gray4;
+            box-shadow: none;
+            box-shadow: -1px 1px 0 rgba($black, .3);
+            transform: scale(.9);
+            
+            img {
+                opacity: .4;
+                
+            }
+        }   
+    }
+    span {
+        margin: 0 20px 0 4px;
+    }
+    
+    .show-user & {
+        display: none;
+    }
+}
+
+
+.content {
+    position: fixed;
+    bottom: 0;
+}
+
+.label {
+    position: absolute;
+    font-size: 11px;
+    margin-top: -20px;
+
+    @include css-animate(showLabel, 2s, 1, 0, ease);
+}
+
+
+@include keyframes(showLabel){
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+$radius: 20px;
+$pi: 3.14;
+$circumference: $radius * 2 * $pi;
+
+@include keyframes(loadingManager) {
+    0%
+       { stroke-dashoffset: $circumference; }
+    50%
+      {  stroke-dashoffset: 0 ;}
+    100%
+       { stroke-dashoffset: -$circumference;}
+
+   }
+
+.loading {
+
+	display: none;
+	img {
+		width: 40px;
+		height:40px;
+	}
+}
+
+.loader {
+	width: 44px;
+	height: 44px;
+	overflow: hidden;
+	margin: 0 auto;
+	opacity: .6;
+	circle {
+		stroke: $white;
+		stroke-width: 4px;
+		stroke-dasharray: $circumference;
+		stroke-dashoffset: 24px;
+		fill: none;
+		stroke-miterlimit: 10px;
+		transform: rotate(-90deg);
+		transform-origin: 50% 50%;
+
+
+		@include css-animate(loadingManager,2s, infinite, 0, ease);
+	}
+}
+
+::-webkit-input-placeholder {
+   color: $white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $white;  
+}
+
+:-ms-input-placeholder {  
+   color: $white;  
+}
+
+.list-wrapper {
+    position: absolute;
+    top:320px;
+    width: 320px;   
+    left: 16px;
+    z-index: 5;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+
+    li {
+        padding: 4px 0;
+        cursor: pointer;
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 8px;
+            letter-spacing: 1px;
+        }
+
+        &.active {
+            color: red;
+        }
+    }
+}
