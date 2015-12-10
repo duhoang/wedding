@@ -188,7 +188,6 @@ html, body {
 .balloon {
   width: 78px;
   height: 267px;
-  background-image: url(/img/baloon-1.png);
   background-size: 78px 267px;
   position: absolute;
   bottom: 0;
@@ -196,7 +195,7 @@ html, body {
   .animate-baloons .balloon {
     display: block; }
     .animate-baloons .balloon.b1 {
-      background-image: url(/img/baloon-1.png);
+      background-image: url(../img/baloon-1.png);
       left: 50%;
       animation: balloonOne linear 4.5s infinite;
       -moz-animation: balloonOne linear 4.5s infinite;
@@ -216,7 +215,7 @@ html, body {
       -o-animation-timing-function: ease-out;
       /* Opera */ }
     .animate-baloons .balloon.b2 {
-      background-image: url(/img/baloon-2.png);
+      background-image: url(../img/baloon-2.png);
       left: 50%;
       animation: balloonTwo linear 4.2s infinite;
       -moz-animation: balloonTwo linear 4.2s infinite;
@@ -236,7 +235,7 @@ html, body {
       -o-animation-timing-function: ease-out;
       /* Opera */ }
     .animate-baloons .balloon.b3 {
-      background-image: url(/img/baloon-3.png);
+      background-image: url(../img/baloon-3.png);
       left: 48%;
       animation: balloonOne linear 4s infinite;
       -moz-animation: balloonOne linear 4s infinite;
@@ -256,7 +255,7 @@ html, body {
       -o-animation-timing-function: ease-out;
       /* Opera */ }
     .animate-baloons .balloon.b4 {
-      background-image: url(/img/baloon-4.png);
+      background-image: url(../img/baloon-4.png);
       left: 52%;
       animation: balloonTwo linear 4.7s infinite;
       -moz-animation: balloonTwo linear 4.7s infinite;
