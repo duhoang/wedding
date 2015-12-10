@@ -16,6 +16,8 @@ $black: #000000;
 $blue: #0b61a3;
 $blue-dark: #0c7197;
 
+$gold: #ddc95c;
+
 $bp-mobile:680px;
 $bp-narrow:768px;
 $bp-regular:1024px;
@@ -110,6 +112,8 @@ $p-brown: #AC6D4A;
     color: $p-yellow-dark;}
 
 
+
+
 * {
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -183,6 +187,7 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 16px;
+    min-width: 1024px;
 }
 
 .container {
@@ -192,6 +197,7 @@ html, body {
     background: url(../img/bg.png);
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 
     img {
         position: absolute;
@@ -205,12 +211,12 @@ html, body {
 
         &.train {
             top: 222px;
-            animation: animateTrain 10s linear infinite ;
+            @include css-animate(animateTrain, 15s, infinite, 0, linear);
         }
 
         &.du {
             top: 279px;
-            left: 595px;
+            left: 594px;
         }
 
         &.eyes {
@@ -221,19 +227,153 @@ html, body {
         &.text {
             top: auto;
             bottom: 0;
+            @include css-animate(showText, 1.5s, 1, 0, ease-out);
         }
     }
 }
 
-@keyframes animateTrain {
+.card-inner {
+    &.thankyou {
+        display: none;
+
+        h2 {
+            margin: 8px 8px 0 8px;
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        div {
+            font-size: 16px;
+        }
+    }
+}
+
+.balloon {
+    width: 78px;
+    height: 267px;
+    background-image: url(/img/baloon-1.png);
+    background-size: 78px 267px;
+    position: absolute;
+    bottom: 0;
+    display: none;
+
+
+    .animate-baloons & {
+        display: block;
+        &.b1 {
+            background-image: url(/img/baloon-1.png);
+            left: 50%;
+            @include css-animate(balloonOne, 4.5s, infinite, 0, ease-out);
+        }
+        &.b2 {
+            background-image: url(/img/baloon-2.png);
+            left: 50%;
+            @include css-animate(balloonTwo, 4.2s, infinite, 0, ease-out);
+        }
+        &.b3 {
+            background-image: url(/img/baloon-3.png);
+            left: 48%;
+            @include css-animate(balloonOne, 4s, infinite, 0, ease-out);
+        }
+        &.b4 {
+            background-image: url(/img/baloon-4.png);
+            left: 52%;
+            @include css-animate(balloonTwo, 4.7s, infinite, 0, ease-out);
+
+        }
+    }
+
+   
+}
+
+.card {
+    position: absolute;
+    width: 270px;
+    height: 180px;
+    top: 396px;
+    left: 345px;
+    padding: 16px 24px;
+   
+    text-align: center;
+    span {
+        display: block;
+        margin: 0 0 8px 0;
+        font-size: 16px;
+    }
+
+    input[type="text"] {
+        display: block;
+        margin-bottom: 8px;
+        height: 24px;
+        width: 100%;
+        padding-left: 4px;
+        font-size: 13px;
+    }
+
+    button {
+        border: none;
+        background: $gold;
+        height: 24px;
+        font-size: 13px;
+        padding: 0 12px;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .plusone {
+        text-align: left;
+        position: absolute;
+        font-size: 13px;
+        bottom: 20px;
+        display: none;
+    }
+}
+
+@include keyframes(balloonOne) {
+    0% {
+        transform: translate(0, 100%);
+    }
+    100% {
+        transform: translate(80px, -960px);
+    }
+}
+
+@include keyframes(balloonTwo) {
+    0% {
+        transform: translate(0, 100%);
+    }
+    100% {
+        transform: translate(-80px, -960px);
+    }
+}
+
+@include keyframes(animateTrain) {
     0% {
         transform: translateX(-100%);
     }
-    80% {
+    60% {
         transform: translateX(-100%);
     }
     100% {
         transform: translateX(960px);
+    }
+}
+
+@include keyframes(showText) {
+    0% {
+        transform: translateY(100%);
+    }
+    60% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
 

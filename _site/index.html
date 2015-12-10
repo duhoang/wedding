@@ -1,7 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Where I've Been</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link type="text/css" href="css/style.css" rel="stylesheet"/>
@@ -18,10 +21,54 @@
             <img src="img/du.gif" class="du" />
             <img src="img/eyes.gif" class="eyes" />
             <img src="img/text.png" class="text" />
+
+            <div class="card">
+                <div class="card-inner form">
+                    <span><b> Please RSVP </b></span>
+                    <input type="text" class="input-guests" placeholder="Name of Guests" name="guests"/>
+                    <input type="text" class="input-email" placeholder="Email" name="email"/>
+                    <input type="text" class="input-address" placeholder="Address" name="address"/>
+
+                    <button class="send-btn">Send</button>
+                </div>
+                <div class="card-inner thankyou">
+                    <h2> Thank You!</h2>
+                    <p> We will keep you posted on information about our wedding as we finalize them.</p>
+                    <p> We'll be in touch soon!</p>
+                    <div>💖</div>
+                </div>
+            </div>
+
+            <div class="balloon b1"/></div>
+            <div class="balloon b2"/></div>
+            <div class="balloon b3"/></div>
+            <div class="balloon b4"/></div>
         </div>
 
     </div>
 
 
 </body>
+
+<script>
+$(function(){
+
+    $('.send-btn').on('click', function(){
+        
+        
+        $.ajax({
+            url: "//formspree.io/du.hoang@gmail.com", 
+            method: "POST",
+            data: {guests: $('.input-guests').val(), email: $('.input-email').val(), address: $('.input-address').val()},
+            dataType: "json"
+        })
+        .done(function() {
+            $('.form').hide().siblings().show();
+
+            $('.container').addClass('animate-baloons');
+        });
+
+    })
+});
+</script>
 </html>
