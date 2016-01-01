@@ -188,6 +188,9 @@ html, body {
     justify-content: center;
     padding: 16px;
     min-width: 1024px;
+
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
 }
 
 .container {
@@ -198,7 +201,10 @@ html, body {
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
-
+    @include css-animate(showCard, 1s, 1, 0, ease-out);
+    
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
     img {
         position: absolute;
         top: 0;
@@ -227,7 +233,7 @@ html, body {
         &.text {
             top: auto;
             bottom: 0;
-            @include css-animate(showText, 1.5s, 1, 0, ease-out);
+            //@include css-animate(showText, 1.5s, 1, 0, ease-out);
         }
     }
 }
@@ -373,6 +379,15 @@ html, body {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@include keyframes(showCard) {
+    0% {
+        transform: translateX(75%) rotateY(60deg) scale(.5);
+    }
+    100% {
+        transform: translateX(0) rotateY(0) scale(1);
     }
 }
 
