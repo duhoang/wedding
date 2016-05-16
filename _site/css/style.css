@@ -166,6 +166,24 @@ a, a:visited {
 p a {
   color: #E74C3C !important; }
 
+.stage {
+  width: 156px;
+  height: 189px;
+  background: url(../img/stage.png);
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%); }
+
+.curtain {
+  width: 72px;
+  height: 81px;
+  background: url(../img/curtain.gif);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(54px, 96px); }
+
 .mail-bird {
   width: 225px;
   height: 144px;
@@ -413,6 +431,34 @@ p a {
       /* Safari and Chrome */
       -o-animation-timing-function: ease-out;
       /* Opera */ }
+
+.program {
+  text-align: center;
+  line-height: 1.5;
+  padding-bottom: 64px; }
+  .program h1 {
+    font-weight: normal; }
+  .program .program-item {
+    margin-bottom: 16px; }
+    .program .program-item span {
+      font-weight: bold; }
+  .program .note {
+    font-size: 13px; }
+  .program .menu {
+    display: flex;
+    justify-content: center; }
+  .program .left-side, .program .right-side {
+    padding: 0 16px;
+    max-width: 320px; }
+  .program .left-side {
+    text-align: right; }
+  .program .right-side {
+    text-align: left; }
+  .program .disclaimer {
+    margin-top: 32px;
+    font-size: 13px;
+    max-width: 640px;
+    margin: 32px auto; }
 
 .card {
   position: absolute;

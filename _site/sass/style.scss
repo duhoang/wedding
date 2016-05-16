@@ -258,6 +258,26 @@ p {
     }
 }
 
+.stage {
+    width: 156px;
+    height: 189px;
+    background: url(../img/stage.png);
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+}
+
+.curtain {
+    width: 72px;
+    height: 81px;
+    background: url(../img/curtain.gif);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(54px, 96px);
+}
+
 .mail-bird {
     width: 225px;
     height: 144px;
@@ -467,6 +487,50 @@ p {
     }
 
    
+}
+
+.program {
+    text-align: center;
+    line-height: 1.5;
+    padding-bottom: 64px;
+
+    h1 {
+        font-weight: normal;
+    }
+
+    .program-item {
+        span {
+            font-weight: bold;
+        }
+        margin-bottom: 16px;
+    }
+
+    .note {
+        font-size: 13px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+    }
+    .left-side, .right-side {
+        padding: 0 16px;
+        max-width: 320px;
+    }
+
+    .left-side {
+        text-align: right;
+    }
+    .right-side {
+        text-align: left;
+    }
+
+    .disclaimer {
+        margin-top: 32px;
+        font-size: 13px;
+        max-width: 640px;
+        margin: 32px auto;
+    }
 }
 
 .card {
